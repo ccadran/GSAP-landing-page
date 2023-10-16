@@ -1,10 +1,11 @@
+"use client";
+import React, { useLayoutEffect, useRef } from "react";
 import styles from "./style.module.css";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { useLayoutEffect, useRef } from "react";
 
-export default function index() {
+export default function Index() {
   const backgroundImage = useRef(null);
   const introImage = useRef(null);
 
@@ -14,20 +15,18 @@ export default function index() {
     const timeline = gsap.timeline({
       scrollTrigger: {
         trigger: document.documentElement,
+        scrub: true,
         start: "top",
         end: "+=500px",
-        scrub: true,
         markers: true,
       },
     });
+
     timeline
-      .fromTo(
-        backgroundImage.current,
-        { clipPath: `inset(15%)` },
-        { clipPath: `inset(0%)` }
-      )
+      .from(backgroundImage.current, { clipPath: `inset(15%)` })
       .to(introImage.current, { height: "200px" }, 0);
   }, []);
+
   return (
     <div className={styles.intro}>
       <div ref={backgroundImage} className={styles.backgroundImage}>
