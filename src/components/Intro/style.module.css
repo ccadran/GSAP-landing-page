@@ -13,7 +13,7 @@
 .introContainer {
   display: flex;
   justify-content: center;
-  position: relative;
+  align-items: center;
   margin-top: 35vh;
 }
 
