@@ -51,6 +51,21 @@ export default function index() {
           </p>
         </div>
       </div>
+      <div className={styles.projectList}>
+        {projects.map((project, index) => {
+          return (
+            <div
+              onMouseOver={() => {
+                setSelectedProject(index);
+              }}
+              className={styles.projectEl}
+              key={`p_${index}`}
+            >
+              <p>{project.title}</p>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
