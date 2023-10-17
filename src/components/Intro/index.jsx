@@ -17,7 +17,7 @@ export default function Index() {
         trigger: document.documentElement,
         scrub: true,
         start: "top",
-        end: "+=500px",
+        end: "+=300px",
         markers: true,
       },
     });
